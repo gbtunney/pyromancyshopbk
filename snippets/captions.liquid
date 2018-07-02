@@ -1,0 +1,42 @@
+<script type="text/javascript" charset="utf-8">
+//<![CDATA[
+// Including jQuery conditionnally.
+if (typeof jQuery === 'undefined') {
+    document.write({{ "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" | script_tag | json }});
+  document.write('<script type="text/javascript">jQuery.noConflict();<\/script>');
+}
+//]]>
+</script>
+
+<script>
+function setCaption(myCaption) {
+    console.log("READY"+myCaption);
+  jQuery('.caption').html(myCaption);
+ /*  jQuery( ".product-single__thumbnail-item img" ).each(function( index ) {
+        var alt = jQuery(this).attr('alt');
+        if(alt != ""){
+            jQuery(this).wrap("<figure />");
+            jQuery(this).parent().append("<figcaption class='figcap'>"+alt+"</figcaption>");
+        }
+    });*/
+  
+
+}
+  
+  
+   
+</script>
+
+<style>
+.figcap{
+    color: {{ settings.caption_color }};
+    font-family: {{ settings.caption_font }};
+    font-size: {{ settings.caption_size }};
+    {% if settings.caption_bold %}
+    font-weight:bold;
+    {% endif %}
+    {% if settings.caption_ital %}
+    font-style:italic;
+    {% endif %}
+}
+</style>THIS IS GILLIAN RIgHT HERRWEWEWE
